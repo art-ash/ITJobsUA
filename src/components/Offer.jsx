@@ -2,6 +2,8 @@ import React from "react";
 import { connect } from "react-redux";
 import { useLocation, Navigate } from "react-router-dom";
 
+import PropTypes from "prop-types";
+
 function Offer(props) {
   const location = useLocation();
   const { records } = props;
@@ -42,6 +44,10 @@ const mapStateToProps = (state) => {
   const { records } = state.appReducer;
 
   return { records };
+};
+
+Offer.propTypes = {
+  records: PropTypes.array,
 };
 
 export default connect(mapStateToProps)(Offer);

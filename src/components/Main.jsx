@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 import Message from "./Message";
 
 function Main(props) {
@@ -41,6 +42,12 @@ const mapStateToProps = (state) => {
     isError,
     isFetching,
   };
+};
+
+Main.propTypes = {
+  records: PropTypes.array,
+  isError: PropTypes.bool,
+  isFetching: PropTypes.bool,
 };
 
 export default connect(mapStateToProps)(Main);

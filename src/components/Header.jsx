@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
+import PropTypes from "prop-types";
 import { setSearch, setSelectQuery, fetchJobs } from "../actions";
 import Preloader from "./Preloader";
 import { categoryOptions, cityOptions } from "../config";
@@ -96,6 +97,14 @@ const mapStateToProps = (state) => {
     records,
     isFetching,
   };
+};
+
+Header.propTypes = {
+  search: PropTypes.string,
+  city: PropTypes.string,
+  category: PropTypes.string,
+  records: PropTypes.array,
+  isFetching: PropTypes.bool,
 };
 
 export default connect(mapStateToProps, {
